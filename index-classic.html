@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
 	<link rel="shortcut icon" href="favicon.ico">
@@ -47,7 +47,7 @@
 				initUI();
 			} else { //multiple servers
 				var noServersAvailable = function () {
-					I("message").innerHTML = "No servers available";
+					I("message").innerHTML = "没有可用服务器";
 				}
 				var runServerSelect = function () {
 					s.selectServer(function (server) {
@@ -166,13 +166,13 @@
 				s.abort();
 				data = null;
 				I("startStopBtn").className = "";
-				I("startStopBtn").setAttribute("aria-label", "Start");
+				I("startStopBtn").setAttribute("aria-label", "开始");
 				I("server").disabled = false;
 				initUI();
 			} else {
 				//test is not running, begin
 				I("startStopBtn").className = "running";
-				I("startStopBtn").setAttribute("aria-label", "Abort");
+				I("startStopBtn").setAttribute("aria-label", "中止");
 				I("shareArea").style.display = "none";
 				I("server").disabled = true;
 				s.onupdate = function (data) {
@@ -180,7 +180,7 @@
 				};
 				s.onend = function (aborted) {
 					I("startStopBtn").className = "";
-					I("startStopBtn").setAttribute("aria-label", "Start");
+					I("startStopBtn").setAttribute("aria-label", "开始");
 					I("server").disabled = false;
 					updateUI(true);
 					if (!aborted) {
@@ -309,11 +309,11 @@
 		}
 
 		#startStopBtn:before {
-			content: "Start";
+			content: "开始";
 		}
 
 		#startStopBtn.running:before {
-			content: "Abort";
+			content: "中止";
 		}
 
 		#serverArea {
@@ -526,7 +526,7 @@
 		<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 	</div>
 	<div id="testWrapper" class="hidden">
-		<button id="startStopBtn" onclick="startStop()" aria-label="Start"></button><br />
+		<button id="startStopBtn" onclick="startStop()" aria-label="开始"></button><br />
 		<a class="privacy" href="#" onclick="I('privacyPolicy').style.display=''">Privacy</a>
 		<div id="serverArea">
 			Server: <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
@@ -546,13 +546,13 @@
 			</div>
 			<div class="testGroup">
 				<div class="testArea">
-					<div class="testName">Download</div>
+					<div class="testName">下载</div>
 					<canvas id="dlMeter" class="meter"></canvas>
 					<div id="dlText" class="meterText"></div>
 					<div class="unit">Mbit/s</div>
 				</div>
 				<div class="testArea">
-					<div class="testName">Upload</div>
+					<div class="testName">上传</div>
 					<canvas id="ulMeter" class="meter"></canvas>
 					<div id="ulText" class="meterText"></div>
 					<div class="unit">Mbit/s</div>
@@ -562,57 +562,56 @@
 				<span id="ip"></span>
 			</div>
 			<div id="shareArea" style="display:none">
-				<h3>Share results</h3>
-				<p>Test ID: <span id="testId"></span></p>
+				<h3>分享结果</h3>
+				<p>测试 ID：<span id="testId"></span></p>
 				<input type="text" value="" id="resultsURL" readonly="readonly"
-					onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')" />
+					onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('链接已复制')" />
 				<img src="" id="resultsImg" />
 			</div>
 		</div>
-		<a href="index.html?design=new">Try the modern design</a><br>
-		<a href="stability.html">Stability Test</a> | <a href="https://github.com/librespeed/speedtest">Source code</a>
+		<a href="index.html?design=new">试用现代版界面</a><br>
+		<a href="stability.html">稳定性测试</a> | <a href="https://github.com/librespeed/speedtest">源代码</a>
 	</div>
 	<div id="privacyPolicy" style="display:none">
-		<h2>Privacy Policy</h2>
-		<p>This HTML5 speed test server is configured with telemetry enabled.</p>
-		<h4>What data we collect</h4>
+		<h2>隐私政策</h2>
+		<p>此 HTML5 测速服务器已启用遥测功能。</p>
+		<h4>我们收集的数据</h4>
 		<p>
-			At the end of the test, the following data is collected and stored:
+			测试结束后，将收集并储存以下数据：
 		<ul>
-			<li>Test ID</li>
-			<li>Time of testing</li>
-			<li>Test results (download and upload speed, ping and jitter)</li>
-			<li>IP address</li>
-			<li>ISP information</li>
-			<li>Approximate location (inferred from IP address, not GPS)</li>
-			<li>User agent and browser locale</li>
-			<li>Test log (contains no personal information)</li>
+			<li>测试 ID</li>
+			<li>测试时间</li>
+			<li>测试结果（下载与上传速度、延迟和抖动）</li>
+			<li>IP 地址</li>
+			<li>互联网服务提供商信息</li>
+			<li>大致位置（根据 IP 地址推断，非 GPS）</li>
+			<li>用户代理和浏览器区域设置</li>
+			<li>测试日志（不含个人信息）</li>
 		</ul>
 		</p>
-		<h4>How we use the data</h4>
+		<h4>我们如何使用数据</h4>
 		<p>
-			Data collected through this service is used to:
+			通过本服务收集的数据将用于：
 		<ul>
-			<li>Allow sharing of test results (sharable image for forums, etc.)</li>
-			<li>To improve the service offered to you (for instance, to detect problems on our side)</li>
+			<li>允许分享测试结果（例如可用于论坛的结果图片）</li>
+			<li>改进为你提供的服务（例如检测我们一侧的问题）</li>
 		</ul>
-		No personal information is disclosed to third parties.
+		我们不会向第三方披露个人信息。
 		</p>
-		<h4>Your consent</h4>
+		<h4>你的同意</h4>
 		<p>
-			By starting the test, you consent to the terms of this privacy policy.
+			开始测试即表示你同意本隐私政策的条款。
 		</p>
-		<h4>Data removal</h4>
+		<h4>删除数据</h4>
 		<p>
-			If you want to have your information deleted, you need to provide either the ID of the test or your IP
-			address. This is the only way to identify your data, without this information we won't be able to comply
-			with your request.<br /><br />
-			Contact this email address for all deletion requests: 
-			<a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>.
+			如需删除你的信息，请提供测试 ID 或 IP 地址。这是识别你的数据的唯一方式；没有这些信息，
+			我们将无法处理你的请求。<br /><br />
+			请通过此电子邮件地址提交所有删除请求：
+			<a href="mailto:PUT@YOUR_EMAIL.HERE">由部署者填写</a>。
 		</p>
 		<br /><br />
 		<div class="closePrivacyPolicy">
-			<a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">Close</a>
+			<a class="privacy" href="#" onclick="I('privacyPolicy').style.display='none'">关闭</a>
 		</div>
 		<br />
 	</div>

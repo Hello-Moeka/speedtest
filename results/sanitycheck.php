@@ -12,7 +12,7 @@ $na="<span class='na'>N/A</span>";
 
 <html>
 <head>
-<title>Speed Test installation sanity check</title>
+<title>网络测速安装检查</title>
 <style>
 	table,th,td { border: 1px solid;}
 	.Pass   { color:green;}

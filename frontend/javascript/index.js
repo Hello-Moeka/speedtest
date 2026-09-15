@@ -120,7 +120,7 @@ function scrollInitialDownloadGaugeIntoView() {
 }
 
 /**
- * Event listener for clicks on the "Copy link" button in the modal
+ * 分享对话框中“复制链接”按钮的点击事件监听器
  */
 async function copyLinkButtonClickHandler() {
   const link = document.querySelector("img#results").src;
@@ -130,7 +130,7 @@ async function copyLinkButtonClickHandler() {
   button.textContent = "Copied!";
   setTimeout(() => {
     button.classList.remove("active");
-    button.textContent = "Copy link";
+    button.textContent = "复制链接";
   }, 3000);
 }
 
@@ -334,9 +334,9 @@ function startRenderingLoop() {
   const resultsImage = document.querySelector("#results");
 
   const buttonTexts = {
-    [INITIALIZING]: "Loading...",
+    [INITIALIZING]: "正在加载…",
     [READY]: "Let's start",
-    [RUNNING]: "Abort",
+    [RUNNING]: "中止",
     [FINISHED]: "Restart",
   };
 

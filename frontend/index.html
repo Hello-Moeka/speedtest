@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -8,13 +8,13 @@
     />
     <meta
       name="description"
-      content="Free and Open Source Speedtest. Run it right now in your browser, or self-host on a PHP, Golang, Rust or Node server. License: LGPL."
+      content="自由开源的网络测速工具。立即在浏览器中测速，或自行部署到 PHP、Golang、Rust 或 Node 服务器。许可证：LGPL。"
     />
     <link rel="shortcut icon" href="images/favicon.svg" />
     <script type="text/javascript" src="speedtest.js"></script>
     <script type="text/javascript" src="javascript/index.js"></script>
     <link rel="stylesheet" type="text/css" href="styling/index.css" />
-    <title>LibreSpeed - Free and Open Source Speedtest</title>
+    <title>LibreSpeed - 自由开源网络测速</title>
   </head>
 
   <body>
@@ -22,24 +22,24 @@
       <img src="images/logo.svg" alt="LibreSpeed" />
     </header>
     <main>
-      <h1>Free and Open Source Speedtest.</h1>
-      <p class="tagline">No Flash, No Java, No Websockets, No Bullsh*t</p>
+      <h1>自由开源网络测速</h1>
+      <p class="tagline">无需 Flash、Java 或 WebSocket，简单可靠</p>
 
       <div class="server-selector">
         <div class="chosen">
           <div class="chevron">
-            <img src="images/chevron.svg" alt="select..." />
+            <img src="images/chevron.svg" alt="选择服务器" />
           </div>
-          <p>current server</p>
-          <h2 id="selected-server">searching nearest server...</h2>
+          <p>当前服务器</p>
+          <h2 id="selected-server">正在查找最近的服务器…</h2>
         </div>
         <ul class="servers"></ul>
         <p class="sponsor" id="sponsor">&nbsp;</p>
       </div>
 
       <p id="privacy-warning" class="hidden">
-        by clicking the start button you agree to our privacy policy<br />
-        <a href="#" id="choose-privacy">or choose your privacy options</a>
+        点击开始按钮，即表示你同意我们的隐私政策<br />
+        <a href="#" id="choose-privacy">或选择你的隐私选项</a>
       </p>
       <button class="disabled" id="start-button"></button>
 
@@ -53,14 +53,14 @@
           <div class="progress"></div>
           <div class="speed"></div>
           <h1><span id="download-speed">00</span> Mbps</h1>
-          <h2>Download</h2>
+          <h2>下载</h2>
         </div>
 
         <div class="gauge upload" id="upload-gauge">
           <div class="progress"></div>
           <div class="speed"></div>
           <h1><span id="upload-speed">00</span> Mbps</h1>
-          <h2>Upload</h2>
+          <h2>上传</h2>
         </div>
 
         <div class="jitter hidden">
@@ -70,83 +70,80 @@
       </div>
 
       <button class="small inverted hidden" id="share-results">
-        Share results
+        分享结果
       </button>
     </main>
     <footer>
       <p class="source">
-        <a href="stability.html">stability test</a> |
-        <a href="https://github.com/librespeed/speedtest">source code</a>
+        <a href="stability.html">稳定性测试</a> |
+        <a href="https://github.com/librespeed/speedtest">源代码</a>
       </p>
     </footer>
 
     <dialog id="share">
       <div class="close-dialog">
-        <img src="images/close-button.svg" alt="Close" />
+        <img src="images/close-button.svg" alt="关闭" />
       </div>
-      <img id="results" src="" alt="Test results in graphical form" />
-      <button id="copy-link">Copy link</button>
+      <img id="results" src="" alt="图形化测速结果" />
+      <button id="copy-link">复制链接</button>
     </dialog>
 
     <dialog id="privacy">
       <div class="close-dialog">
-        <img src="images/close-button.svg" alt="Close" />
+        <img src="images/close-button.svg" alt="关闭" />
       </div>
       <section>
-        <h1>Privacy Policy</h1>
+        <h1>隐私政策</h1>
         <p>
-          This HTML5 speed test server is configured with telemetry enabled.
+          此 HTML5 测速服务器已启用遥测功能。
         </p>
 
-        <h2>What data we collect</h2>
+        <h2>我们收集的数据</h2>
         <p>
-          At the end of the test, the following data is collected and stored:
+          测试结束后，将收集并储存以下数据：
         </p>
 
         <ul>
-          <li>Test ID</li>
-          <li>Time of testing</li>
-          <li>Test results (download and upload speed, ping and jitter)</li>
-          <li>IP address</li>
-          <li>ISP information</li>
-          <li>Approximate location (inferred from IP address, not GPS)</li>
-          <li>User agent and browser locale</li>
-          <li>Test log (contains no personal information)</li>
+          <li>测试 ID</li>
+          <li>测试时间</li>
+          <li>测试结果（下载与上传速度、延迟和抖动）</li>
+          <li>IP 地址</li>
+          <li>互联网服务提供商信息</li>
+          <li>大致位置（根据 IP 地址推断，非 GPS）</li>
+          <li>用户代理和浏览器区域设置</li>
+          <li>测试日志（不含个人信息）</li>
         </ul>
 
-        <h2>How we use the data</h2>
-        <p>Data collected through this service is used to:</p>
+        <h2>我们如何使用数据</h2>
+        <p>通过本服务收集的数据将用于：</p>
 
         <ul>
           <li>
-            Allow sharing of test results (sharable image for forums, etc.)
+            允许分享测试结果（例如可用于论坛的结果图片）
           </li>
           <li>
-            To improve the service offered to you (for instance, to detect
-            problems on our side)
+            改进为你提供的服务（例如检测我们一侧的问题）
           </li>
         </ul>
 
-        <p>No personal information is disclosed to third parties.</p>
+        <p>我们不会向第三方披露个人信息。</p>
 
-        <h2>Your consent</h2>
+        <h2>你的同意</h2>
         <p>
-          By starting the test, you consent to the terms of this privacy policy.
+          开始测试即表示你同意本隐私政策的条款。
         </p>
 
-        <h2>Data removal</h2>
+        <h2>删除数据</h2>
         <p>
-          If you want to have your information deleted, you need to provide
-          either the ID of the test or your IP address. This is the only way to
-          identify your data, without this information we won't be able to
-          comply with your request.
+          如需删除你的信息，请提供测试 ID 或 IP 地址。这是识别你的数据的唯一方式；
+          没有这些信息，我们将无法处理你的请求。
         </p>
         <p>
-          Contact this email address for all deletion requests:
-          <a href="mailto:PUT@YOUR_EMAIL.HERE">TO BE FILLED BY DEVELOPER</a>.
+          请通过此电子邮件地址提交所有删除请求：
+          <a href="mailto:PUT@YOUR_EMAIL.HERE">由部署者填写</a>。
         </p>
       </section>
-      <button id="close-privacy">Close</button>
+      <button id="close-privacy">关闭</button>
     </dialog>
   </body>
 </html>
